@@ -1,7 +1,13 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
     <style>
         /* Basic styling for the modal */
+        body {
+            font-family: 'Open Sans', sans-serif; /* Set font family */
+            font-size: 22px; /* Font size */
+        }
         .modal {
             display: block; /* Make modal visible */
             position: fixed; /* Stay in place */
@@ -13,7 +19,7 @@
             background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
         }
         .modal-content {
-            background-color: #fff; /* White background */
+            background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
             margin: 15% auto; /* 15% from the top and centered */
             padding: 20px; /* Some padding */
             border: 1px solid #888; /* Border */
@@ -39,8 +45,4 @@
 <body>
     <div class="modal" id="policyModal">
         <div class="modal-content">
-            <p>By accessing this site, you agree to our <a href="https://www.gpxl.com/cookies">Cookies Policy</a>, <a href="https://www.gpxl.com/privacy">Privacy Policy</a>, and <a href="https://www.gpxl.com/termsandconditions">Terms & Conditions</a>.</p>
-            <button onclick="closeModal()">Agree</button>
-        </div>
-    </div>
-    <script>
+            <p>By accessing this site, you agree to our <a href="https://www.gpxl.com/cookies">Cookies Policy</a>, <a href="https://www.gpxl.com/privacy">Privacy Policy</a>, a
