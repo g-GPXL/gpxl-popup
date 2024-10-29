@@ -3,32 +3,35 @@
 <head>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
     <style>
-        /* Basic styling for the modal */
+        /* Basic styling for the body */
         body {
             font-family: 'Open Sans', sans-serif; /* Set font family */
             font-size: 22px; /* Font size */
         }
-        .modal {
-            display: block; /* Make modal visible */
+
+        /* Basic styling for the modal */
+        #modal {
+            display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
+            z-index: 1; /* Sit on top */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
-            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
         }
-        .modal-content {
+        #modalContent {
             background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
             margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px; /* Some padding */
-            border: 1px solid #888; /* Border */
-            width: 80%; /* Width of the modal */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
             max-width: 500px; /* Max width of the modal */
             text-align: center; /* Centered text */
             border-radius: 8px; /* Rounded corners */
         }
-        .modal button {
+        #modal button {
             margin-top: 10px; /* Space above the button */
             padding: 10px 20px; /* Button padding */
             border: none; /* No border */
@@ -37,12 +40,38 @@
             cursor: pointer; /* Pointer cursor on hover */
             border-radius: 4px; /* Rounded button corners */
         }
-        .modal button:hover {
+        #modal button:hover {
             background-color: #45a049; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
-    <div class="modal" id="policyModal">
-        <div class="modal-content">
-            <p>By accessing this site, you agree to our <a href="https://www.gpxl.com/cookies">Cookies Policy</a>, <a href="https://www.gpxl.com/privacy">Privacy Policy</a>, a
+    <h1>Custom Overlay Title</h1>
+    <button id="openModal">Open Modal</button>
+
+    <div id="modal">
+        <div id="modalContent">
+            <span id="closeModal" style="color: red; cursor: pointer;">&times; Close</span>
+            <p>By accessing this site, you agree to our <a href="https://www.gpxl.com/cookies">Cookies Policy</a>, <a href="https://www.gpxl.com/privacy">Privacy Policy</a>, and <a href="https://www.gpxl.com/termsandconditions">Terms & Conditions</a>.</p>
+            <button onclick="document.getElementById('modal').style.display='none'">Agree</button>
+        </div>
+    </div>
+
+    <script>
+        // Open the modal when the button is clicked
+        document.getElementById('openModal').onclick = function() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        // Close the modal when the close button is clicked
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
