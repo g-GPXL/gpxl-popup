@@ -1,0 +1,43 @@
+<html>
+<head>
+    <style>
+        /* Basic styling for the modal */
+        .modal {
+            display: block;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .modal button {
+            margin-top: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal" id="policyModal">
+        <div class="modal-content">
+            <p>By accessing this site, you agree to our <a href="www.gpxl.com/cookies">Cookies Policy</a>, <a href="www.gpxl.com/privacy">Website Policy</a>, and <a href="www.gpxl.com/termsandconditions">Terms & Conditions</a>.</p>
+            <button onclick="closeModal()">Agree</button>
+        </div>
+    </div>
+    <script>
+        function closeModal() {
+            document.getElementById('policyModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
